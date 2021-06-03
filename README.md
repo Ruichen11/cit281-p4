@@ -11,8 +11,9 @@ Purpose of this project:
 
 ## Project Code:
 1. P4-data
-```
+
 // Question and answer data array
+```
 const data = [
   {
     question: "Q1",
@@ -27,12 +28,15 @@ const data = [
     answer: "A3",
   },
 ];
+```
 
 // Export statement must be below data declaration - no hoisting with const
+```
 module.exports = {
   data,
 };
 ```
+
 ```
 function pluck(array, key) {
   return array.map((item) => item[key]);
