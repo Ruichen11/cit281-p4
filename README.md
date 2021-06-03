@@ -206,7 +206,8 @@ const {
   updateQuestionAnswer,   // Extra credit
   deleteQuestionAnswer    // Extra credit
 } = require("./p4-module.js");
-
+```
+```
 fastify.get("/cit/question", (request, reply) => {
   // Return response
   reply
@@ -214,7 +215,9 @@ fastify.get("/cit/question", (request, reply) => {
     .header("Content-Type", "text/json; charset=utf-8")
     .send({ error: "", statusCode: 200, questions: getQuestions() });
 });
+```
 
+```
 fastify.get("/cit/question/:number", (request, reply) => {
   // Extract question number using deconstruction
   let { number = "" } = request.params;
@@ -257,7 +260,8 @@ fastify.get("/cit/question/:number", (request, reply) => {
     .header("Content-Type", "text/json; charset=utf-8")
     .send(response);
 });
-
+```
+```
 fastify.get("/cit/answer", (request, reply) => {
   // Return response
   reply
@@ -265,7 +269,8 @@ fastify.get("/cit/answer", (request, reply) => {
     .header("Content-Type", "text/json; charset=utf-8")
     .send({ error: "", statusCode: 200, answers: getAnswers() });
 });
-
+```
+```
 fastify.get("/cit/answer/:number", (request, reply) => {
   // Extract answer number using deconstruction
   let { number = "" } = request.params;
@@ -308,7 +313,9 @@ fastify.get("/cit/answer/:number", (request, reply) => {
     .header("Content-Type", "text/json; charset=utf-8")
     .send(response);
 });
+```
 
+```
 fastify.get("/cit/questionanswer/:number", (request, reply) => {
   // Extract question/answer number using deconstruction
   let { number = "" } = request.params;
@@ -352,7 +359,9 @@ fastify.get("/cit/questionanswer/:number", (request, reply) => {
     .header("Content-Type", "text/json; charset=utf-8")
     .send(response);
 });
+```
 
+```
 fastify.get("/cit/questionanswer", (request, reply) => {
   // Return response
   reply.code(200).header("Content-Type", "text/json; charset=utf-8").send({
@@ -361,7 +370,9 @@ fastify.get("/cit/questionanswer", (request, reply) => {
     questions_answers: getQuestionsAnswers(),
   });
 });
+```
 
+```
 // Handle unmatched routes
 fastify.get("*", (request, reply) => {
   reply
